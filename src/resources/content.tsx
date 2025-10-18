@@ -2,18 +2,19 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Tars",
+  lastName: "Cunha",
+  name: `Tars Cunha`,
+  role: "UX Designer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "tarscunha@gmail.com",
+  location: "America/New_York", // IANA timezone identifier
+  displayLocation: "Boston, MA", // Display location
+  languages: ["English", "Portuguese", "Spanish" ], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -21,25 +22,29 @@ const newsletter: Newsletter = {
 const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
+  
   {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
+  },
+  
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/tars-cunha/",
+  },
+
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/tarscunha",
+  },
+
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/tars_ez_yo/",
   },
 ];
 
@@ -49,9 +54,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Done is better than perfect</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -65,15 +70,10 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
-    </>
+      I'm Tars, a UX designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
+      After hours, you can find me on the volleyball court 🏐
+    </> 
+
   ),
 };
 
@@ -91,16 +91,15 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://calendar.app.google/mzQjYP9jG8XoiDgK9",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Intro",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I’m a results-oriented UX Designer with 12 years of experience at Google, specializing in developer tools and AI-powered experiences.
+Proven ability to lead design for complex, 0-to-1 projects, drive cross-functional alignment, and deliver user-centric solutions that have a measurable business impact. 
       </>
     ),
   },
@@ -109,21 +108,23 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Google Firebase",
+        timeframe: "2021 - Present",
+        role: "UX Designer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            For the past 4 years, I’ve been creating and improving developer tools via Firebase, with a focus on Pre-Release Testing and App Monitoring. 
           </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+  
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/firebase-cover.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
@@ -131,6 +132,7 @@ const about: About = {
             height: 9,
           },
         ],
+        
       },
       {
         company: "Creativ3",
@@ -152,15 +154,11 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Middlesex Community College",
+        description: <>Associates, Graphic Design • 2006 - 2009</>,
       },
     ],
   },
@@ -212,6 +210,10 @@ const about: About = {
           {
             name: "Supabase",
             icon: "supabase",
+          },
+          {
+            name: "Android",
+            icon: "android",
           },
         ],
         // optional: leave the array empty if you don't want to display images

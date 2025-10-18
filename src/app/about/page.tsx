@@ -96,7 +96,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {person.displayLocation || person.location}
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">
@@ -107,16 +107,6 @@ export default function About() {
                 ))}
               </Row>
             )}
-          </Column>
-        )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column
-            id={about.intro.title}
-            fillWidth
-            minHeight="160"
-            vertical="center"
-            marginBottom="32"
-          >
             {about.calendar.display && (
               <Row
                 fitWidth
@@ -125,7 +115,7 @@ export default function About() {
                 radius="full"
                 padding="4"
                 gap="8"
-                marginBottom="m"
+                // marginBottom="m"
                 vertical="center"
                 className={styles.blockAlign}
                 style={{
@@ -142,6 +132,43 @@ export default function About() {
                 />
               </Row>
             )}
+             <Row
+                fitWidth
+                border="brand-alpha-medium"
+                background="brand-alpha-weak"
+                radius="full"
+                padding="4"
+                gap="8"
+                marginBottom="m"
+                vertical="center"
+                className={styles.blockAlign}
+                style={{
+                  backdropFilter: "blur(var(--static-space-1))",
+                }}
+              >
+                <Icon paddingLeft="12" name="document" onBackground="brand-weak" />
+                <Row paddingX="8">Download resume</Row>
+                <IconButton
+                  href={"#"}
+                  data-border="rounded"
+                  variant="secondary"
+                  icon="chevronDown"
+                />
+              </Row>
+
+
+
+          </Column>
+        )}
+        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+          <Column
+            id={about.intro.title}
+            fillWidth
+            minHeight="160"
+            vertical="center"
+            marginBottom="32"
+          >
+            
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>

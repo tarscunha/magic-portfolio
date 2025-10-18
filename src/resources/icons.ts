@@ -29,6 +29,11 @@ import {
   SiSupabase,
 } from "react-icons/si";
 
+import { FaAndroid } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
+
+
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -63,6 +68,8 @@ export const iconLibrary: Record<string, IconType> = {
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
   telegram: FaTelegram,
+  android: FaAndroid,
+  instagram: FaInstagram,
 };
 
 export type IconLibrary = typeof iconLibrary;
