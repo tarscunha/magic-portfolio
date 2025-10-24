@@ -13,7 +13,7 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
+import { Projects } from "@/components/work/Projects/";
 import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
@@ -101,7 +101,7 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+  <Projects exclude={["automate-design-handovers-with-a-figma-to-code-pipeline","google-ads-projects","google-ink-projects","simple-portfolio-builder","google-firebase-projects"]} />
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
@@ -123,7 +123,7 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+  {/* Remove additional projects from home page */}
       <Mailchimp />
     </Column>
   );
