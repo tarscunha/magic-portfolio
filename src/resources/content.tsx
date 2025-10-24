@@ -105,7 +105,7 @@ const about: About = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experience",
     experiences: [
       {
         company: "Google Firebase",
@@ -116,10 +116,10 @@ const about: About = {
             Created end-to-end UX for Gemini-powered developer tools in the Firebase Console and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
           </>,
           <>
-            Scale & Scope: Contributed to the design strategy for products used by over 3 million developers globally, collaborating with a cross-functional team of 30+ engineers and 4 PMs.
+              <Link target="_blank" rel="noopener noreferrer" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
           </>,
           <>
-            Process & Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., App Distribution and Crashlytics).
+            Process & Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/app-distribution">App Distribution</Link> and <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/crashlytics">Crashlytics</Link>).
           </>,
           <>
             Impact: Transformed Firebase App Distribution into a full-fledged testing tool by introducing automatic testing features to complement human testing, leading to the launch of Firebase's very first agent in the console, the <Link target="_blank" href="https://firebase.blog/posts/2025/04/app-testing-agent/"> App Testing Agent.</Link> 
@@ -185,7 +185,7 @@ annotation functionality into high-profile consumer products like <Link target="
         achievements: [
           <>
              Defined Data Visualization specifications for the Material Design system,
-impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">See project</Link>
+impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">View chart gallery</Link>
           </>,
 
         ],
@@ -234,81 +234,113 @@ impacting millions of users across the Google product suite. <Link target="_blan
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills & Tools",
     skills: [
       {
         title: "Design & Prototyping",
         description: (
-          <>Figma
-Sketch
-Adobe Creative Suite
-Design Systems
-Data Visualization
-Design Sprints</>
+          null
         ),
         tags: [
           {
             name: "Figma",
             icon: "figma",
           },
+          {
+            name: "Sketch",
+            icon: "sketch",
+          },
+          {
+            name: "Adobe Creative Suite",
+            icon: "adobe",
+          },
+          {
+            name: "Design Systems",
+            icon: "design-system",
+          },
+          {
+            name: "Data Visualization",
+            icon: "data-viz",
+          },
+          {
+            name: "Design Sprints",
+            icon: "sprint",
+          },
         ],
       },
       {
         title: "Research & Strategy",
         description: (
-          <>A/B Testing
-Usability Studies
-Research Planning
-Customer Interviews
-Cross-functional Alignment
-Workshop Facilitation</>
+          null
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "A/B Testing",
+            icon: "ab-test",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Usability Studies",
+            icon: "accessibility",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Research Planning",
+            icon: "clipboard",
           },
           {
-            name: "Android",
-            icon: "android",
+            name: "Customer Interviews",
+            icon: "user-interview",
+          },
+          {
+            name: "Cross-functional Alignment",
+            icon: "users",
+          },
+          {
+            name: "Workshop Facilitation",
+            icon: "workshop",
           },
         ],
       },  
       {
         title: "Technical Fluency",
         description: (
-          <>HTML
-CSS
-JS
-Git
-IDEs (VS Code)
-Vibe Coding Tools
-(Firebase Studio, GitHub Copilot, Cursor)</>
+          null
         ),
         tags: [
+          {
+            name: "HTML",
+            icon: "html5",
+          },
+          {
+            name: "CSS",
+            icon: "css3",
+          },
           {
             name: "JavaScript",
             icon: "javascript",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Git",
+            icon: "git",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "VS Code",
+            icon: "vscode",
           },
           {
-            name: "Android",
-            icon: "android",
+            name: "Vibe Coding Tools",
+            icon: "tools",
+          },
+          {
+            name: "Firebase Studio",
+            icon: "firebase",
+          },
+          {
+            name: "GitHub Copilot",
+            icon: "copilot",
+          },
+          {
+            name: "Cursor",
+            icon: "cursor",
           },
         ],
       },  
