@@ -98,15 +98,15 @@ export default function About() {
               <Icon onBackground="accent-weak" name="globe" />
               {person.displayLocation || person.location}
             </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
+                {person.languages && person.languages.length > 0 && (
+                  <Row wrap gap="8">
+                    {person.languages.map((language) => (
+                      <Tag key={language} size="l">
+                        {language}
+                      </Tag>
+                    ))}
+                  </Row>
+                )}
             {about.calendar.display && (
               <Row
                 fitWidth
@@ -139,7 +139,7 @@ export default function About() {
                 radius="full"
                 padding="4"
                 gap="8"
-                marginBottom="m"
+                //marginBottom="m"
                 vertical="center"
                 className={styles.blockAlign}
                 style={{
@@ -147,12 +147,13 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="document" onBackground="brand-weak" />
-                <Row paddingX="8">Download resume</Row>
+                <Row paddingX="8">Download CV</Row>
                 <IconButton
-                  href={"#"}
+                  href="/documents/Tars Cunha CV.pdf"
                   data-border="rounded"
                   variant="secondary"
                   icon="chevronDown"
+                  target="_blank"
                 />
               </Row>
 
@@ -261,16 +262,15 @@ export default function About() {
                     </Column>
                     {experience.images && experience.images.length > 0 && (
                       <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
+                        {experience.images.map((image) => (
                           <Row
-                            key={index}
+                            key={`${experience.company}-${image.src}`}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}
                             height={image.height}
                           >
                             <Media
-                              enlarge
                               radius="m"
                               sizes={image.width.toString()}
                               alt={image.alt}
@@ -317,8 +317,8 @@ export default function About() {
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
+                {about.technical.skills.map((skill) => (
+                  <Column key={skill.title} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
                       {skill.title}
                     </Text>
@@ -336,16 +336,15 @@ export default function About() {
                     )}
                     {skill.images && skill.images.length > 0 && (
                       <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
+                        {skill.images.map((image) => (
                           <Row
-                            key={index}
+                            key={`${skill.title}-${image.src}`}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}
                             height={image.height}
                           >
                             <Media
-                              enlarge
                               radius="m"
                               sizes={image.width.toString()}
                               alt={image.alt}

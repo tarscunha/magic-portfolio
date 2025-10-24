@@ -1,11 +1,12 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import Link from "next/link";
 
 const person: Person = {
   firstName: "Tars",
   lastName: "Cunha",
   name: `Tars Cunha`,
-  role: "UX Designer",
+  role: "Product Designer",
   avatar: "/images/avatar.jpg",
   email: "tarscunha@gmail.com",
   location: "America/New_York", // IANA timezone identifier
@@ -70,7 +71,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Tars, a UX designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
+      I'm Tars, a Senior UX designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
       After hours, you can find me on the volleyball court 🏐
     </> 
 
@@ -98,8 +99,7 @@ const about: About = {
     title: "Intro",
     description: (
       <>
-        I’m a results-oriented UX Designer with 12 years of experience at Google, specializing in developer tools and AI-powered experiences.
-Proven ability to lead design for complex, 0-to-1 projects, drive cross-functional alignment, and deliver user-centric solutions that have a measurable business impact. 
+        I'm a highly versatile designer specializing in UX for complex, high-scale technical platforms. Proven ability to drive cross-functional alignment and roadmap execution for complex, 0-to-1 initiatives across consumer, enterprise, and developer platforms.
       </>
     ),
   },
@@ -110,23 +110,88 @@ Proven ability to lead design for complex, 0-to-1 projects, drive cross-function
       {
         company: "Google Firebase",
         timeframe: "2021 - Present",
-        role: "UX Designer",
+        role: "Senior UX Designer",
         achievements: [
           <>
-            For the past 4 years, I’ve been creating and improving developer tools via Firebase, with a focus on Pre-Release Testing and App Monitoring. 
+            Created end-to-end UX for Gemini-powered developer tools in the Firebase Console and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
           </>,
+          <>
+            Scale & Scope: Contributed to the design strategy for products used by over 3 million developers globally, collaborating with a cross-functional team of 30+ engineers and 4 PMs.
+          </>,
+          <>
+            Process & Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., App Distribution and Crashlytics).
+          </>,
+          <>
+            Impact: Transformed Firebase App Distribution into a full-fledged testing tool by introducing automatic testing features to complement human testing, leading to the launch of Firebase's very first agent in the console, the <Link target="_blank" href="https://firebase.blog/posts/2025/04/app-testing-agent/"> App Testing Agent.</Link> 
+          </>,
+  
   
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/firebase-cover.jpg",
-            alt: "Once UI Project",
+            src: "/images/about/firebase-cover.jpg",
+            alt: "Firebase logo",
             width: 16,
             height: 9,
           },
+        ],
+        
+      },
+      {
+        company: "Google Ads",
+        timeframe: "2018 - 2021",
+        role: "UX Designer",
+        achievements: [
+          <>
+            Developed results-oriented, information-dense user interfaces for the
+campaign management tools used by enterprise clients in the <Link target="_blank" href="https://travel.google/partners/hotels">travel industry</Link>.
+          </>,
+
+        ],
+        images: [
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/about/google-ads-cover.jpg",
+            alt: "Google Ads logo",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Google Ink",
+        timeframe: "2018 - 2015",
+        role: "UX Designer",
+        achievements: [
+          <>
+            Led design and research as the sole UX specialist to integrate drawing/
+annotation functionality into high-profile consumer products like <Link target="_blank" href="https://lifehacker.com/tech/drawing-mode-is-google-keeps-best-kept-secret?test_uuid=02DN02BmbRCcASIX6xMQtY9&test_variant=B">Google Keep</Link>, <Link target="_blank" href="https://edu.google.com/intl/ALL_ca/workspace-for-education/products/classroom/">Google Classroom</Link>, and <Link target="_blank" href="https://canvas.apps.chrome/">Canvas</Link>.
+          </>,
+
+        ],
+        images: [
+          {
+            src: "/images/about/google-ink.png",
+            alt: "Google Ink logo",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Google Charts",
+        timeframe: "2014 - 2015",
+        role: "UX Designer",
+        achievements: [
+          <>
+             Defined Data Visualization specifications for the Material Design system,
+impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">See project</Link>
+          </>,
+
+        ],
+        images: [
+          {
+            src: "/images/about/google-charts.png",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -135,21 +200,26 @@ Proven ability to lead design for complex, 0-to-1 projects, drive cross-function
         
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Vectra Creative",
+        timeframe: "2011 - 2014",
+        role: "Co-founder & Lead Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Managed all business operations, including client relations and hiring, while acting as the primary UX and Visual Designer to deliver finalized branding and web solutions.
           </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/about/vectra-logo.png",
+            alt: "vectra logo",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
+      
+
     ],
   },
   studies: {
@@ -167,9 +237,14 @@ Proven ability to lead design for complex, 0-to-1 projects, drive cross-function
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Design & Prototyping",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Figma
+Sketch
+Adobe Creative Suite
+Design Systems
+Data Visualization
+Design Sprints</>
         ),
         tags: [
           {
@@ -177,26 +252,16 @@ Proven ability to lead design for complex, 0-to-1 projects, drive cross-function
             icon: "figma",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
       },
       {
-        title: "Next.js",
+        title: "Research & Strategy",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>A/B Testing
+Usability Studies
+Research Planning
+Customer Interviews
+Cross-functional Alignment
+Workshop Facilitation</>
         ),
         tags: [
           {
@@ -216,13 +281,34 @@ Proven ability to lead design for complex, 0-to-1 projects, drive cross-function
             icon: "android",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+      },  
+      {
+        title: "Technical Fluency",
+        description: (
+          <>HTML
+CSS
+JS
+Git
+IDEs (VS Code)
+Vibe Coding Tools
+(Firebase Studio, GitHub Copilot, Cursor)</>
+        ),
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "Next.js",
+            icon: "nextjs",
+          },
+          {
+            name: "Supabase",
+            icon: "supabase",
+          },
+          {
+            name: "Android",
+            icon: "android",
           },
         ],
       },  
@@ -242,7 +328,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
+  title: `My work`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
