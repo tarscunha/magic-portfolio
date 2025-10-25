@@ -113,7 +113,7 @@ const about: About = {
         role: "Senior UX Designer",
         achievements: [
           <>
-            Created end-to-end UX for Gemini-powered developer tools in the Firebase Console and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
+            Created end-to-end UX for Gemini-powered developer tools in the <Link target="_blank" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
           </>,
           <>
               <Link target="_blank" rel="noopener noreferrer" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.

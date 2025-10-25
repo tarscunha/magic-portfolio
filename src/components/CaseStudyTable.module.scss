@@ -1,0 +1,50 @@
+.tableCard {
+  background: none;
+  box-shadow: none;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: none;
+}
+
+.table th {
+  background: none;
+  color: var(--color-text-strong, #222);
+  color: var(--color-text-strong, #222);
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--color-border-default, #e5e7eb);
+}
+
+.table td {
+  background: none;
+  color: var(--color-text-default, #222);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-default, #e5e7eb);
+  vertical-align: top;
+}
+
+// Dark mode overrides
+@media (prefers-color-scheme: dark) {
+  .table th {
+    color: var(--color-text-strong, #fff);
+    border-bottom: 2px solid var(--color-border-default, #333);
+  }
+  .table td {
+    color: var(--color-text-default, #fff);
+    border-bottom: 1px solid var(--color-border-default, #333);
+  }
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:nth-child(even) td {
+  background: none;
+}

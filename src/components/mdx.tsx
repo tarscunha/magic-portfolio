@@ -1,3 +1,4 @@
+import { CaseStudyTable } from "./CaseStudyTable";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
 import { slugify as transliterate } from "transliteration";
@@ -181,6 +182,7 @@ const components = {
   li: createListItem as any,
   hr: createHR as any,
   Heading,
+  CaseStudyTable,
   Text,
   CodeBlock,
   InlineCode,
