@@ -116,7 +116,7 @@ const about: About = {
             Created end-to-end UX for Gemini-powered developer tools in the <Link target="_blank" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
           </>,
           <>
-              <Link target="_blank" rel="noopener noreferrer" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
+          Scale & Scope: Contributed to the design strategy for products used by over 3 million developers globally, collaborating with a cross-functional team of 30+ engineers and 4 PMs.
           </>,
           <>
             Process & Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/app-distribution">App Distribution</Link> and <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/crashlytics">Crashlytics</Link>).
