@@ -42,11 +42,11 @@ const social: Social = [
     link: "https://github.com/tarscunha",
   },
 
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/tars_ez_yo/",
-  },
+  // {
+  //   name: "Instagram",
+  //   icon: "instagram",
+  //   link: "https://www.instagram.com/tars_ez_yo/",
+  // },
 ];
 
 const home: Home = {
@@ -112,22 +112,6 @@ const about: About = {
         company: "Google Firebase",
         timeframe: "2021 - Present",
         role: "Senior UX Designer",
-        achievements: [
-          <>
-            Created end-to-end UX for Gemini-powered developer tools in the <Link target="_blank" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
-          </>,
-          <>
-          Scale & Scope: Contributed to the design strategy for products used by over 3 million developers globally, collaborating with a cross-functional team of 30+ engineers and 4 PMs.
-          </>,
-          <>
-            Process & Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/app-distribution">App Distribution</Link> and <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/crashlytics">Crashlytics</Link>).
-          </>,
-          <>
-            Impact: Transformed Firebase App Distribution into a full-fledged testing tool by introducing automatic testing features to complement human testing, leading to the launch of Firebase's very first agent in the console, the <Link target="_blank" href="https://firebase.blog/posts/2025/04/app-testing-agent/"> App Testing Agent.</Link> 
-          </>,
-  
-  
-        ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
@@ -137,19 +121,25 @@ const about: About = {
             height: 9,
           },
         ],
-        
+        achievements: [
+          <span key="firebase-1">
+            Created end-to-end UX for Gemini-powered developer tools in the <Link target="_blank" href="https://console.firebase.google.com/">Firebase Console</Link> and <Link target="_blank" href="https://firebase.studio/">Firebase Studio</Link>, driving business impact across pre-release testing and observability products.
+          </span>,
+          <span key="firebase-2">
+            Scale &amp; Scope: Contributed to the design strategy for products used by over 3 million developers globally, collaborating with a cross-functional team of 30+ engineers and 4 PMs.
+          </span>,
+          <span key="firebase-3">
+            Process &amp; Tools: Defined user research plans, wireframed complex workflows in Figma, and delivered high-fidelity prototypes for pre-release testing and observability features (e.g., <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/app-distribution">App Distribution</Link> and <Link target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/products/crashlytics">Crashlytics</Link>).
+          </span>,
+          <span key="firebase-4">
+            Impact: Transformed Firebase App Distribution into a full-fledged testing tool by introducing automatic testing features to complement human testing, leading to the launch of Firebase's very first agent in the console, the <Link target="_blank" href="https://firebase.blog/posts/2025/04/app-testing-agent/"> App Testing Agent.</Link>
+          </span>,
+        ],
       },
       {
         company: "Google Ads",
         timeframe: "2018 - 2021",
         role: "UX Designer",
-        achievements: [
-          <>
-            Developed results-oriented, information-dense user interfaces for the
-campaign management tools used by enterprise clients in the <Link target="_blank" href="https://travel.google/partners/hotels">travel industry</Link>.
-          </>,
-
-        ],
         images: [
           {
             src: "/images/about/google-ads-cover.jpg",
@@ -158,18 +148,16 @@ campaign management tools used by enterprise clients in the <Link target="_blank
             height: 9,
           },
         ],
+        achievements: [
+          <span key="ads-1">
+            Developed results-oriented, information-dense user interfaces for the campaign management tools used by enterprise clients in the <Link target="_blank" href="https://travel.google/partners/hotels">travel industry</Link>.
+          </span>,
+        ],
       },
       {
         company: "Google Ink",
         timeframe: "2018 - 2015",
         role: "UX Designer",
-        achievements: [
-          <>
-            Led design and research as the sole UX specialist to integrate drawing/
-annotation functionality into high-profile consumer products like <Link target="_blank" href="https://lifehacker.com/tech/drawing-mode-is-google-keeps-best-kept-secret?test_uuid=02DN02BmbRCcASIX6xMQtY9&test_variant=B">Google Keep</Link>, <Link target="_blank" href="https://edu.google.com/intl/ALL_ca/workspace-for-education/products/classroom/">Google Classroom</Link>, and <Link target="_blank" href="https://canvas.apps.chrome/">Canvas</Link>.
-          </>,
-
-        ],
         images: [
           {
             src: "/images/about/google-ink.png",
@@ -178,18 +166,16 @@ annotation functionality into high-profile consumer products like <Link target="
             height: 9,
           },
         ],
+        achievements: [
+          <span key="ink-1">
+            Led design and research as the sole UX specialist to integrate drawing/ annotation functionality into high-profile consumer products like <Link target="_blank" href="https://lifehacker.com/tech/drawing-mode-is-google-keeps-best-kept-secret?test_uuid=02DN02BmbRCcASIX6xMQtY9&test_variant=B">Google Keep</Link>, <Link target="_blank" href="https://edu.google.com/intl/ALL_ca/workspace-for-education/products/classroom/">Google Classroom</Link>, and <Link target="_blank" href="https://canvas.apps.chrome/">Canvas</Link>.
+          </span>,
+        ],
       },
       {
         company: "Google Charts",
         timeframe: "2014 - 2015",
         role: "UX Designer",
-        achievements: [
-          <>
-             Defined Data Visualization specifications for the Material Design system,
-impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">View chart gallery</Link>
-          </>,
-
-        ],
         images: [
           {
             src: "/images/about/google-charts.png",
@@ -198,18 +184,16 @@ impacting millions of users across the Google product suite. <Link target="_blan
             height: 9,
           },
         ],
-        
+        achievements: [
+          <span key="charts-1">
+            Defined Data Visualization specifications for the Material Design system, impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">View chart gallery</Link>
+          </span>,
+        ],
       },
       {
         company: "Vectra Creative",
         timeframe: "2011 - 2014",
         role: "Co-founder & Lead Designer",
-        achievements: [
-          <>
-            Managed all business operations, including client relations and hiring, while acting as the primary UX and Visual Designer to deliver finalized branding and web solutions.
-          </>,
-
-        ],
         images: [
           {
             src: "/images/about/vectra-logo.png",
@@ -217,6 +201,11 @@ impacting millions of users across the Google product suite. <Link target="_blan
             width: 16,
             height: 9,
           },
+        ],
+        achievements: [
+          <span key="vectra-1">
+            Managed all business operations, including client relations and hiring, while acting as the primary UX and Visual Designer to deliver finalized branding and web solutions.
+          </span>,
         ],
       },
       
@@ -361,7 +350,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Featured Projects`,
+  title: "Featured Projects",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
