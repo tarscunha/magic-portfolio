@@ -55,7 +55,8 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Done is better than perfect</>,
+  headline: <>Hi there 👋</>,
+  // this is that floating chip at the top of the home page 
   featured: {
     display: false,
     title: (
@@ -71,8 +72,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Tars, a Senior UX designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
-      After hours, you can find me on the volleyball court 🏐
+      I'm Tars, a Senior UX Designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
+      After hours, you can find me playing volleyball 🏐
     </> 
 
   ),

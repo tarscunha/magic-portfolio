@@ -11,21 +11,23 @@ images:
 
 **Project:** Transforming Firebase App Distribution into a full-fledged QA platform using Gemini-powered intelligent testing.
 
-**My Role:** Senior UX Designer (Lead Designer/Sole Designer on the feature team)
-
-**Product Context:** Firebase App Distribution
+**My Role:** Lead UX Designer
 
 ---
 
 ## 1. Executive Summary
 
-This project details the creation and launch of the **App Testing Agent**, Firebase’s first Gemini-powered feature integrated directly into the console. The Agent successfully transformed App Distribution from a simple binary delivery system into a full-fledged pre-release testing solution.
+This project details the creation and launch of the **App Testing Agent**, Firebase’s first Gemini-powered agent integrated directly into the console. The agent successfully transformed App Distribution from a simple binary delivery system into a full-fledged pre-release testing solution.
 
-**The Problem:** Mobile developers relied heavily on costly, inconsistent manual QA. Pre-existing feedback tools only yielded minimal, often unactionable data (e.g., only **94 feedback instances** in the last 28 days from In-App Feedback).
+**The Problem:** Mobile developers relied heavily on costly, inconsistent manual QA. Closing the developer-tester feedback loop expanded functionality, although it only yielded minimal, often unactionable data (e.g., only **94 feedback instances** in the last 28 days from In-App Feedback).
 
 **The Solution:** We designed an intelligent **App Testing Agent** that uses the Gemini model to perform human-like, exploratory testing based on simple natural language instructions. The key UX challenge was masking the inherent complexity and latency of the LLM behind a highly structured, trustworthy, and actionable reporting interface.
 
-**The Impact:** The Agent acted as a major catalyst for platform adoption. Its launch correlated with a significant surge in Monthly Active Users (MAU) for App Distribution, which **grew by approximately 35%** (from \~85k to over \~115k) in Q2 2025. It quickly became the preferred automated testing solution, running **4,151 AI-driven tests** in its first month.
+**The Impact:** The Agent acted as a major catalyst for platform adoption. Its launch correlated with a significant surge in Monthly Active Users for App Distribution, which **grew by approximately 35%** (from \~85k to over \~115k) in Q2 2025. It quickly became the preferred automated testing solution, with over **46,000 AI-driven tests** run so far.
+
+
+![Agent UI](/images/app-testing-agent/banner.png)
+
 
 ---
 
@@ -43,20 +45,31 @@ The opportunity was to introduce an intelligent, scalable QA layer that compleme
 
 ## 3. The Solution: Designing the Intelligent Agent
 
-The App Testing Agent uses the Gemini model to provide advanced, intelligent exploration, evolving significantly from the previous simple Automated Tester (Beta).
+The Agent’s final design was the culmination of three major product phases. The foremost design challenge across all phases was masking AI complexity (such as high latency and black-box anxiety) behind a simple, high-confidence user experience.
 
-### Core Vision & Constraints
+### Phase 1: In-App Feedback (The Validation)
 
-The Agent’s primary function is to perform **human-like app exploration** based on simple, natural language instruction (e.g., "Log in, navigate to profile settings, and verify the two-factor authentication toggle"). The foremost design challenge was **masking AI complexity**—such as high latency and black-box anxiety—behind a simple, high-confidence user experience, all while strictly adhering to the established Firebase design system.
+This [initial feature](https://firebase.blog/posts/2023/09/in-app-feedback/) (Sept 2023) confirmed the high demand for quality tools but highlighted the limitations of relying on manual human interaction. While it provided context-rich, voluntary feedback, it could not scale.
+
+![Agent UI](/images/app-testing-agent/tester-happy-path.png)
+![Agent UI](/images/app-testing-agent/dev-happy-path.png)
+
+### Phase 2: Automated Tester (The Scaling Problem)
+
+The introduction of the [Automated Tester](https://firebase.blog/posts/2024/02/automated-smoke-testing-app-distribution/) (Feb 2024) solved the scaling problem by integrating with a device farm, allowing developers to run tests on a wide selection of real and virtual devices remotely. However, it relied on random roboscripts, meaning developers had no control over test coverage or flow fidelity.
+![Agent UI](/images/app-testing-agent/atad-device-config.png)
+![Agent UI](/images/app-testing-agent/atad-test-pass.png)
+
+### Phase 3: App Testing Agent (The Intelligent Solution)
+
+The [final evolution](https://firebase.blog/posts/2025/04/app-testing-agent/) (April 2025) solved for test fidelity and intelligence via Gemini. The core functionality centered on enabling Create, Read, and Delete (CRD) operations for test cases using natural language, drastically lowering the barrier to entry for less technical QA teams. Users could write test cases in plain English, and Gemini would translate them into precise agent actions.
+![Agent UI](/images/app-testing-agent/ai-test-case.png)
+![Agent UI](/images/app-testing-agent/ai-test-config.png)
 
 ### Key UX Workflow
 
-We designed a four-step workflow, focusing heavily on managing user expectations during asynchronous LLM processing:
-
-1. **Activation:** Clear entry point for AI testing within the build details view. **\[IMAGE: Agent Activation UI\]**
-2. **Test Creation:** Primary interaction uses **natural language prompts** to describe complex, multi-step scenarios in plain English. **\[IMAGE: Natural Language Prompt Input\]**
-3. **Real-time Status:** A dedicated console status card communicates processing steps (e.g., "Installing build," "Executing prompt: Log In") to manage latency and build trust. **\[IMAGE: Real-time Agent Status Card\]**
-4. **Results & Reporting:** The core value delivery, transforming raw LLM output into an actionable report.
+The final artifact was a test results report featuring an interactive timeline with descriptions and screenshots of every action taken, which enables detecting issues with pinpoint accuracy.
+![Agent UI](/images/app-testing-agent/ai-test-result.png)
 
 ### Critical Design Decisions
 
@@ -64,14 +77,14 @@ We designed a four-step workflow, focusing heavily on managing user expectations
   columns={["Challenge", "Before (Problem)", "After (Solution)"]}
   rows={[
     {
-      "Challenge": <>Actionable Reporting</>,
-      "Before (Problem)": <>Initial LLM output was noisy and lacked the structure developers needed for quick diagnosis.</>,
-      "After (Solution)": <>Designed a visual <strong>Structured Summary Card</strong>. This card clearly isolates critical issues, includes confidence scores, and allows for expanding technical details (device logs, full navigation path) on demand. <em>[IMAGE: Before & After Structured Results Card]</em></>,
+      "Challenge": <>Actionable Reporting / Reproducibility</>,
+      "Before (Problem)": <>The Roboscripts provided scale but lacked test fidelity. Reports were randomized and lacked reproducible steps, forcing engineers to guess the test path.</>,
+      "After (Solution)": <>Designed a visual Structured Summary Card powered by Gemini. Reports feature an interactive timeline showing every action the Agent took, each accompanied by a screenshot that illustrates exactly where and how the agent interacted.</>,
     },
     {
       "Challenge": <>Trust and Transparency</>,
-      "Before (Problem)": <>Developers treated the AI tool as a "black box," leading to low trust for a mission-critical function like QA.</>,
-      "After (Solution)": <>Established a <strong>transparent conversational tone</strong> for status messages. Paired this with detailed, step-by-step status indicators in the console UI to build confidence in the Agent's logic. <em>[IMAGE: Transparency & Trust Indicators]</em></>,
+      "Before (Problem)": <>Developers treated the automated testing tool as a "black box," leading to low trust for a mission-critical function like QA.</>,
+      "After (Solution)": <>Established detailed, step-by-step status and action indicators in the console UI to build confidence in the Agent's logic.</>,
     },
   ]}
 />
@@ -96,6 +109,12 @@ The Agent’s launch correlated with a major inflection point in platform growth
       "Narrative Impact": <>Low-volume, manual solution confirmed the size of the initial QA gap.</>,
     },
     {
+      "Feature & Launch Date": <>Automated Tests (Feb 2024)</>,
+      "Usage Metric": <>Platform Growth (MAU)</>,
+      "Data Point (as of Oct 2025)": <>Monthly Active Users increased by 9% in Q1 2024.</>,
+      "Narrative Impact": <>Test automation helped with the scaling problem and validated user desire for smarter solutions.</>,
+    },
+    {
       "Feature & Launch Date": <>App Testing Agent (April 2025)</>,
       "Usage Metric": <>Platform Growth (MAU)</>,
       "Data Point (as of Oct 2025)": <>Monthly Active Users surged by approx. 35% in Q2 2025.</>,
@@ -104,7 +123,7 @@ The Agent’s launch correlated with a major inflection point in platform growth
     {
       "Feature & Launch Date": <>App Testing Agent (April 2025)</>,
       "Usage Metric": <>Test Volume & Preference</>,
-      "Data Point (as of Oct 2025)": <>4,151 AI tests vs. 3,445 Random Tests (Last 28d)</>,
+      "Data Point (as of Oct 2025)": <>Over 46k AI Tests vs. ~27k Random Tests (lifetime count)</>,
       "Narrative Impact": <>Quickly became the preferred automated method, demonstrating strong product/market fit for intelligent testing.</>,
     },
   ]}
