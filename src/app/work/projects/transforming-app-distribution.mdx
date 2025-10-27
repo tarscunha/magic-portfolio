@@ -26,7 +26,7 @@ This project details the creation and launch of the **App Testing Agent**, Fireb
 **The Impact:** The Agent acted as a major catalyst for platform adoption. Its launch correlated with a significant surge in Monthly Active Users for App Distribution, which **grew by approximately 35%** (from \~85k to over \~115k) in Q2 2025. It quickly became the preferred automated testing solution, with over **46,000 AI-driven tests** run so far.
 
 
-![Agent UI](/images/app-testing-agent/banner.png)
+<LightboxImage src="/images/app-testing-agent/banner.png" alt="Agent UI banner" aspectRatio="16 / 9" />
 
 
 ---
@@ -45,31 +45,36 @@ The opportunity was to introduce an intelligent, scalable QA layer that compleme
 
 ## 3. The Solution: Designing the Intelligent Agent
 
-The Agent’s final design was the culmination of three major product phases. The foremost design challenge across all phases was masking AI complexity (such as high latency and black-box anxiety) behind a simple, high-confidence user experience.
+The Agent’s final design was the culmination of three major product phases, spanning over two years of development. My contribution encompassed the end-to-end design for all three phases, including research planning, prototyping, and validation of the critical user journeys (discovery, configuration, and results) for In-App Feedback, the Automated Tester, and the final Agent. The foremost design challenge across all phases was masking AI complexity—such as high latency and black-box anxiety—behind a simple, high-confidence user experience.
 
 ### Phase 1: In-App Feedback (The Validation)
 
 This [initial feature](https://firebase.blog/posts/2023/09/in-app-feedback/) (Sept 2023) confirmed the high demand for quality tools but highlighted the limitations of relying on manual human interaction. While it provided context-rich, voluntary feedback, it could not scale.
 
-![Agent UI](/images/app-testing-agent/tester-happy-path.png)
-![Agent UI](/images/app-testing-agent/dev-happy-path.png)
+<LightboxImage src="/images/app-testing-agent/tester-happy-path.png" alt="Agent UI tester happy path" aspectRatio="16 / 9" />
+<LightboxImage src="/images/app-testing-agent/dev-happy-path.png" alt="Agent UI dev happy path" aspectRatio="16 / 9" />
 
 ### Phase 2: Automated Tester (The Scaling Problem)
 
 The introduction of the [Automated Tester](https://firebase.blog/posts/2024/02/automated-smoke-testing-app-distribution/) (Feb 2024) solved the scaling problem by integrating with a device farm, allowing developers to run tests on a wide selection of real and virtual devices remotely. However, it relied on random roboscripts, meaning developers had no control over test coverage or flow fidelity.
-![Agent UI](/images/app-testing-agent/atad-device-config.png)
-![Agent UI](/images/app-testing-agent/atad-test-pass.png)
+#### Device selection & configuration
+<LightboxImage src="/images/app-testing-agent/atad-device-config.png" alt="Agent UI device config" aspectRatio="16 / 9" />
+#### Automated Test results
+<LightboxImage src="/images/app-testing-agent/atad-test-pass.png" alt="Agent UI test pass" aspectRatio="16 / 9" />
 
 ### Phase 3: App Testing Agent (The Intelligent Solution)
 
 The [final evolution](https://firebase.blog/posts/2025/04/app-testing-agent/) (April 2025) solved for test fidelity and intelligence via Gemini. The core functionality centered on enabling Create, Read, and Delete (CRD) operations for test cases using natural language, drastically lowering the barrier to entry for less technical QA teams. Users could write test cases in plain English, and Gemini would translate them into precise agent actions.
-![Agent UI](/images/app-testing-agent/ai-test-case.png)
-![Agent UI](/images/app-testing-agent/ai-test-config.png)
+#### Creating test cases in natural language
+<LightboxImage src="/images/app-testing-agent/ai-test-case.png" alt="Agent UI test case" aspectRatio="16 / 9" />
+#### AI Test configuration
+<LightboxImage src="/images/app-testing-agent/ai-test-config.png" alt="Agent UI test config" aspectRatio="16 / 9" />
 
 ### Key UX Workflow
 
 The final artifact was a test results report featuring an interactive timeline with descriptions and screenshots of every action taken, which enables detecting issues with pinpoint accuracy.
-![Agent UI](/images/app-testing-agent/ai-test-result.png)
+#### AI Test results
+<LightboxImage src="/images/app-testing-agent/ai-test-result.png" alt="Agent UI test result" aspectRatio="16 / 9" />
 
 ### Critical Design Decisions
 

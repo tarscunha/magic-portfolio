@@ -1,3 +1,4 @@
+import { LightboxImage } from "@/components/LightboxImage";
 import { CaseStudyTable } from "./CaseStudyTable";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import React, { ReactNode } from "react";
@@ -166,6 +167,7 @@ function createHR() {
 }
 
 const components = {
+  LightboxImage,
   p: createParagraph as any,
   h1: createHeading("h1") as any,
   h2: createHeading("h2") as any,
