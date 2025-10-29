@@ -235,7 +235,7 @@ const about: About = {
           {
             name: "Figma",
             icon: "figma",
-          },
+          }, 
           {
             name: "Sketch",
             icon: "sketch",
