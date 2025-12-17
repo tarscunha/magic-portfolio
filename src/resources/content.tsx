@@ -72,7 +72,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Tars, a Senior UX Designer at Google, working on developer tools in <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/">Firebase</a>.
+      I'm Tars,  a highly versatile designer specializing in UX for complex, high-scale technical platforms.
       After hours, you can find me playing volleyball 🏐
     </> 
 
@@ -110,7 +110,7 @@ const about: About = {
     experiences: [
       {
         company: "Google Firebase",
-        timeframe: "2021 - Present",
+        timeframe: "2021 - 2025",
         role: "Senior UX Designer",
         images: [
           // optional: leave the array empty if you don't want to display images
