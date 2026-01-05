@@ -11,7 +11,7 @@ const person: Person = {
   email: "tarscunha@gmail.com",
   location: "America/New_York", // IANA timezone identifier
   displayLocation: "Boston, MA", // Display location
-  languages: ["English", "Portuguese", "Spanish" ], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Portuguese", ], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -108,6 +108,25 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Experience",
     experiences: [
+      {
+        company: "Snyk",
+        timeframe: "2026 - Present",
+        role: "Staff Product Designer",
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/about/snyk.png",
+            alt: "Snyk logo",
+            width: 16,
+            height: 9,
+          },
+        ],
+        achievements: [
+           <span key="snyk-1">
+            I am on the Developer Experience team at <Link target="_blank" href="https://snyk.io/">Snyk</Link>, an AI-powered Developer & App Security Platform.
+          </span>,
+        ],
+      },
       {
         company: "Google Firebase",
         timeframe: "2021 - 2025",
