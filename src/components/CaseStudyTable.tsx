@@ -8,6 +8,9 @@ export interface CaseStudyTableProps {
 }
 
 export function CaseStudyTable({ columns, rows }: CaseStudyTableProps) {
+  if (!columns || !rows) {
+    return null;
+  }
   return (
     <Card className={styles.tableCard} padding="0" radius="l" style={{ overflow: "hidden" }}>
       <table className={styles.table}>

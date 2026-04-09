@@ -123,7 +123,8 @@ const about: About = {
         ],
         achievements: [
            <span key="snyk-1">
-            I am on the Developer Experience team at <Link target="_blank" href="https://snyk.io/">Snyk</Link>, an AI-powered Developer & App Security Platform.
+            I lead the design strategy for <Link target="_blank" href="https://snyk.io/">Snyk's</Link> Developer Experience team, focusing on how millions of developers interact with security within their native environments. My work centers on building AI-native tools for the IDE and CLI that streamline collaboration between development and security teams, enabling large enterprises to scale innovation without compromising safety.
+        
           </span>,
         ],
       },

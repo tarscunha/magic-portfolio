@@ -2,6 +2,33 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'edge';
 
+function isValidUrl(urlString: string): boolean {
+  try {
+    const url = new URL(urlString);
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    const hostname = url.hostname.toLowerCase();
+    // Block localhost, private IPs, link-local, and any IP addresses
+    const ipRegex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    if (
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1' ||
+      hostname === '::1' ||
+      hostname === '0.0.0.0' ||
+      hostname === 'broadcasthost' ||
+      hostname.startsWith('192.168.') ||
+      hostname.startsWith('10.') ||
+      hostname.startsWith('172.') ||
+      hostname.startsWith('169.254.') ||
+      ipRegex.test(hostname) ||
+      hostname.includes('localhost') ||
+      hostname.includes('internal')
+    ) return false;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function decodeHTMLEntities(text: string): string {
   return text.replace(/&(#?[a-zA-Z0-9]+);/g, (match, entity) => {
     const entities: { [key: string]: string } = {
@@ -73,8 +100,16 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'URL is required' }, { status: 400 });
   }
 
+  if (!isValidUrl(url)) {
+    return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
+  }
+
+  const parsedUrl = new URL(url);
+  const safeUrl = parsedUrl.href;
+
   try {
-    const response = await fetchWithTimeout(url);
+    // Snyk ignore: javascript/Ssrf - URL is validated above to prevent SSRF attacks
+    const response = await fetchWithTimeout(safeUrl);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch URL: ${response.status}`);
@@ -85,7 +120,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       ...metadata,
-      url,
+      url: safeUrl,
     });
   } catch (error) {
     console.error('Error fetching metadata:', error instanceof Error ? error.message : String(error));
