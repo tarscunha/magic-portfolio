@@ -131,7 +131,7 @@ const about: About = {
       {
         company: "Google Firebase",
         timeframe: "2021 - 2025",
-        role: "Senior UX Designer",
+        role: "UX Designer",
         images: [
           // optional: leave the array empty if you don't want to display images
           {
