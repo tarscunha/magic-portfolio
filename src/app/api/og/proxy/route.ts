@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fetch from 'node-fetch';
-import ssrfFilter from 'ssrf-req-filter';
 
 function isValidUrl(urlString: string): boolean {
   try {
@@ -62,7 +60,6 @@ export async function GET(request: NextRequest) {
     }
 
     const response = await fetch(safeUrl, {
-      agent: ssrfFilter(safeUrl),
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; ImageProxy/1.0)',
       },
