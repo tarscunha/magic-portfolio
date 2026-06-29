@@ -54,12 +54,17 @@ function decodeHTMLEntities(text: string): string {
   });
 }
 
+const ALLOWED_URL_PATTERN = /^https?:\/\/[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(:[0-9]{1,5})?(\/[^\s]*)?$/;
+
 async function fetchWithTimeout(url: string, timeout = 5000) {
+  if (!ALLOWED_URL_PATTERN.test(url) || !isValidUrl(url)) {
+    throw new Error('Invalid URL');
+  }
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
 
   try {
-    const response = await fetch(url, { 
+    const response = await fetch(url.match(ALLOWED_URL_PATTERN)![0], { 
       signal: controller.signal,
       headers: {
         'User-Agent': 'bot'

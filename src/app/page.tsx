@@ -101,7 +101,7 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-  <Projects exclude={["magic-the-accounting","automate-design-handovers-with-a-figma-to-code-pipeline","google-ads-projects","google-ink-projects","simple-portfolio-builder","google-firebase-projects","google-charts-projects"]} />
+  <Projects exclude={["magic-the-accounting","automate-design-handovers-with-a-figma-to-code-pipeline","google-ads-projects","google-ink-projects","simple-portfolio-builder","google-firebase-projects","google-charts-projects","snyk-projects"]} />
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">

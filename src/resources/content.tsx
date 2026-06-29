@@ -100,7 +100,7 @@ const about: About = {
     title: "Intro",
     description: (
       <>
-        I'm a highly versatile designer specializing in UX for complex, high-scale technical platforms. Proven ability to drive cross-functional alignment and roadmap execution for complex, 0-to-1 initiatives across consumer, enterprise, and developer platforms.
+        I'm a highly versatile designer specializing in UX for high-scale technical platforms. Proven ability to drive cross-functional alignment and roadmap execution for complex, 0-to-1 initiatives across consumer, enterprise, and developer platforms.
       </>
     ),
   },
@@ -123,7 +123,7 @@ const about: About = {
         ],
         achievements: [
            <span key="snyk-1">
-            I lead the design strategy for <Link target="_blank" href="https://snyk.io/">Snyk's</Link> Developer Experience team, focusing on how millions of developers interact with security within their native environments. My work centers on building AI-native tools for the IDE and CLI that streamline collaboration between development and security teams, enabling large enterprises to scale innovation without compromising safety.
+            I lead the design strategy for <Link target="_blank" href="https://snyk.io/">Snyk's</Link> Developer Experience team, focusing on how millions of developers interact with security within their native environments. My work centers on building both AI-Native and AI-Augmented tools that streamline collaboration between development and security teams, enabling large enterprises to scale innovation without compromising safety.
         
           </span>,
         ],
@@ -206,7 +206,7 @@ const about: About = {
         ],
         achievements: [
           <span key="charts-1">
-            Defined Data Visualization specifications for the Material Design system, impacting millions of users across the Google product suite. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">View chart gallery</Link>
+            Defined Data Visualization specifications for the Material Design system, impacting millions of users across products like Google Sheets and Analytics, establishing strict accessibility and internationalization standards. <Link target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery">View chart gallery</Link>
           </span>,
         ],
       },
@@ -311,17 +311,17 @@ const about: About = {
         ],
       },  
       {
-        title: "Technical Fluency",
+        title: "Technical Literacy",
         description: (
           null
         ),
         tags: [
           {
-            name: "HTML",
+            name: "HTML5",
             icon: "html5",
           },
           {
-            name: "CSS",
+            name: "CSS3",
             icon: "css3",
           },
           {
@@ -337,8 +337,8 @@ const about: About = {
             icon: "vscode",
           },
           {
-            name: "Vibe Coding Tools",
-            icon: "tools",
+            name: "Claude",
+            icon: "claude",
           },
           {
             name: "Firebase Studio",
@@ -351,6 +351,10 @@ const about: About = {
           {
             name: "Cursor",
             icon: "cursor",
+          },
+          {
+            name: "CLI",
+            icon: "terminal",
           },
         ],
       },  

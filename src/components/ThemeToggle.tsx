@@ -17,6 +17,10 @@ export const ThemeToggle: React.FC = () => {
     setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
   }, [theme]);
 
+  if (!mounted) {
+    return null;
+  }
+
   const icon = currentTheme === "dark" ? "light" : "dark";
   const nextTheme = currentTheme === "light" ? "dark" : "light";
 

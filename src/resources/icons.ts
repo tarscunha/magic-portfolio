@@ -1,8 +1,10 @@
-import { SiHtml5, SiCss3, SiVuedotjs, SiFirebase } from "react-icons/si";
+import { SiHtml5, SiCss, SiVuedotjs, SiFirebase } from "react-icons/si";
 import { IoMdGitMerge } from "react-icons/io";
 import { VscVscode } from "react-icons/vsc";
-import { FaTools, FaRegKeyboard } from "react-icons/fa";
-import { TbBrandGithubCopilot } from "react-icons/tb";
+import { FaTools, FaRegKeyboard, FaTerminal } from "react-icons/fa";
+import { BsClaude } from "react-icons/bs";
+
+import { TbBrandGithubCopilot, TbBrandAdobe } from "react-icons/tb";
 import { MdOutlineScience, MdOutlineAccessibility, MdOutlineGroups, MdOutlineWork, MdOutlineAssignment } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { IconType } from "react-icons";
@@ -38,7 +40,7 @@ import {
 
 import { FaAndroid } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { SiSketch, SiAdobecreativecloud } from "react-icons/si";
+import { SiSketch } from "react-icons/si";
 import { MdDesignServices } from "react-icons/md";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { GiSprint } from "react-icons/gi";
@@ -75,7 +77,7 @@ export const iconLibrary: Record<string, IconType> = {
   supabase: SiSupabase,
   figma: SiFigma,
   sketch: SiSketch,
-  adobe: SiAdobecreativecloud,
+  adobe: TbBrandAdobe,
   "design-system": MdDesignServices,
   "data-viz": BiBarChartAlt2,
   sprint: GiSprint,
@@ -86,13 +88,15 @@ export const iconLibrary: Record<string, IconType> = {
   users: MdOutlineGroups,
   workshop: MdOutlineWork,
   html5: SiHtml5,
-  css3: SiCss3,
+  css3: SiCss,
   git: IoMdGitMerge,
   vscode: VscVscode,
   tools: FaTools,
   firebase: SiFirebase,
   copilot: TbBrandGithubCopilot,
   cursor: FaRegKeyboard,
+  claude: BsClaude,
+  terminal: FaTerminal,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

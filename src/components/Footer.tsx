@@ -1,9 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentYear = mounted ? new Date().getFullYear() : 2026;
+
+  if (!mounted) {
+    return <div style={{ height: "80px", width: "100%" }} />;
+  }
 
   return (
     <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>

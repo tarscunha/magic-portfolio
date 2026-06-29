@@ -44,6 +44,17 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const activePath = mounted ? pathname : "";
+
+  if (!mounted) {
+    return <div style={{ height: "80px", width: "100%" }} />;
+  }
 
   return (
     <>
@@ -59,6 +70,7 @@ export const Header = () => {
         zIndex={9}
       />
       <Row
+        suppressHydrationWarning
         fitHeight
         className={styles.position}
         position="sticky"
@@ -87,7 +99,7 @@ export const Header = () => {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/" selected={activePath === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
@@ -97,14 +109,14 @@ export const Header = () => {
                       prefixIcon="person"
                       href="/about"
                       label={about.label}
-                      selected={pathname === "/about"}
+                      selected={activePath === "/about"}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
-                      selected={pathname === "/about"}
+                      selected={activePath === "/about"}
                     />
                   </Row>
                 </>
@@ -116,14 +128,14 @@ export const Header = () => {
                       prefixIcon="grid"
                       href="/work"
                       label={work.label}
-                      selected={pathname.startsWith("/work")}
+                      selected={activePath.startsWith("/work")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="grid"
                       href="/work"
-                      selected={pathname.startsWith("/work")}
+                      selected={activePath.startsWith("/work")}
                     />
                   </Row>
                 </>
@@ -135,14 +147,14 @@ export const Header = () => {
                       prefixIcon="book"
                       href="/blog"
                       label={blog.label}
-                      selected={pathname.startsWith("/blog")}
+                      selected={activePath.startsWith("/blog")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="book"
                       href="/blog"
-                      selected={pathname.startsWith("/blog")}
+                      selected={activePath.startsWith("/blog")}
                     />
                   </Row>
                 </>
@@ -154,14 +166,14 @@ export const Header = () => {
                       prefixIcon="gallery"
                       href="/gallery"
                       label={gallery.label}
-                      selected={pathname.startsWith("/gallery")}
+                      selected={activePath.startsWith("/gallery")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="gallery"
                       href="/gallery"
-                      selected={pathname.startsWith("/gallery")}
+                      selected={activePath.startsWith("/gallery")}
                     />
                   </Row>
                 </>

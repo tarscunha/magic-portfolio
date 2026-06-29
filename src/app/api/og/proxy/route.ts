@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import fetch from 'node-fetch';
+import ssrfFilter from 'ssrf-req-filter';
 
 function isValidUrl(urlString: string): boolean {
   try {
@@ -41,11 +43,26 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
     }
 
+    const ALLOWED_HOSTS: Record<string, string> = {
+      'images.unsplash.com': 'https://images.unsplash.com',
+      'cdn.pixabay.com': 'https://cdn.pixabay.com',
+      'i.imgur.com': 'https://i.imgur.com',
+    };
     const parsedUrl = new URL(imageUrl);
-    const safeUrl = parsedUrl.href;
-    
-    // Snyk ignore: javascript/Ssrf - URL is validated above to prevent SSRF attacks
+    const allowedBase = ALLOWED_HOSTS[parsedUrl.hostname.toLowerCase()];
+    if (!allowedBase) {
+      return NextResponse.json({ error: 'Host not allowed' }, { status: 400 });
+    }
+    const sanitizedPath = encodeURI(decodeURI(parsedUrl.pathname)).replace(/[^A-Za-z0-9\-_.~!$&'()*+,;=:@/%]/g, '');
+    const sanitizedSearch = parsedUrl.search.replace(/[^A-Za-z0-9\-_.~!$&'()*+,;=:@/?%]/g, '');
+    const safeUrl: string = allowedBase + sanitizedPath + sanitizedSearch;
+
+    if (!safeUrl.startsWith(allowedBase + '/') && safeUrl !== allowedBase) {
+      return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
+    }
+
     const response = await fetch(safeUrl, {
+      agent: ssrfFilter(safeUrl),
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; ImageProxy/1.0)',
       },
