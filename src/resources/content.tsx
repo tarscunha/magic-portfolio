@@ -110,7 +110,7 @@ const about: About = {
     experiences: [
       {
         company: "Snyk",
-        timeframe: "2026 - Present",
+        timeframe: "Jan 2026 - July 2026",
         role: "Staff Product Designer",
         images: [
           // optional: leave the array empty if you don't want to display images
