@@ -35,11 +35,15 @@ const social: Social = [
     icon: "linkedin",
     link: "https://www.linkedin.com/in/tars-cunha/",
   },
-
   {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/tarscunha",
+  },
+  {
+    name: "GitLab",
+    icon: "gitlab",
+    link: "https://gitlab.com/tcunha",
   },
 
   // {
