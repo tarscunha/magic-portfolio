@@ -109,6 +109,26 @@ const about: About = {
     title: "Experience",
     experiences: [
       {
+        company: "GitLab",
+        timeframe: "Sept 2026 - Present",
+        role: "Staff Product Designer",
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/about/gitlab.png",
+            alt: "GitLab logo",
+            width: 16,
+            height: 9,
+          },
+        ],
+        achievements: [
+           <span key="snyk-1">
+            Leading end-to-end design for GitLab's AI/agentic product suite, from strategy and craft standards through execution, while mentoring designers across the org on AI-specific interaction patterns.
+        
+          </span>,
+        ],
+      },
+      {
         company: "Snyk",
         timeframe: "Jan 2026 - July 2026",
         role: "Staff Product Designer",
